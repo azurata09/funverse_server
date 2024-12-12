@@ -1,0 +1,74 @@
+openapi: 3.0.0
+
+info:
+  title: mock-server
+  version: 1.0.0
+servers: # base endpoint
+  - url: http://localhost:3000/
+    description: ローカルサーバー
+paths:
+  /user/{id}:
+    get:
+      summary: ユーザー情報を取得する。
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            minItems: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                close:
+                  type: boolean
+                  required: true
+                  example: true
+      responses:
+        '200':
+          description: ユーザー情報の取得に成功。
+          content:
+            application/json:
+              schema:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: あずらた
+                    grade:
+                      type: integer
+                      example: 4
+                    bio:
+                      type: string
+                      example: ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+                    sns:
+                      type: object
+                      properties:
+                        x:
+                          type: string
+                          example: azurata09_
+  /user/{id}/close:
+    post:
+      summary: ユーザーがビーコンの近くにいるかどうかを登録する。
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 'ユーザーの情報を設定することに成功'
+        '400':
+          description: 'リクエストが不正'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Invailed ID'
