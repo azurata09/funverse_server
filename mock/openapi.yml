@@ -25,7 +25,6 @@ paths:
               properties:
                 close:
                   type: boolean
-                  required: true
                   example: true
       responses:
         '200':
