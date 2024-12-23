@@ -59,6 +59,9 @@ paths:
             id:
               description: 'ユーザーのID'
               type: integer
+            close:
+              description: '近くにいるか'
+              type: boolean
       responses:
         '200':
           description: 'ユーザーの情報を設定することに成功'
