@@ -8,13 +8,6 @@ const app: express.Express = express()
 const port = 3000
 app.use(bodyParser.json())
 
-// const initDataSql = fs.readFileSync('./sql/sampleData.sql').toString()
-// const dummyDataSqls = fs
-//   .readFileSync('./sql/sampleData.sql')
-//   .toString()
-//   .split(';')
-//   .slice(0, -1)
-
 const db = new sqlite.Database('./data/data.db', (err) => {
   if (err) {
     console.error(err)
