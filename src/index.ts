@@ -40,7 +40,6 @@ const db = new sqlite.Database('./data/data.db', (err) => {
 })
 
 app.get('/user/:userID', (req: express.Request, res: express.Response) => {
-  //res.send("こんにち");
   res.json({
     userID: req.params.userID,
     name: 'azurata',
