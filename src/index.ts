@@ -2,7 +2,6 @@ import express from 'express'
 
 import bodyParser from 'body-parser'
 
-// import fs from 'node:fs'
 import sqlite from 'sqlite3'
 
 const app: express.Express = express()
