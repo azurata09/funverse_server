@@ -8,7 +8,7 @@ import sqlite from 'sqlite3'
 
 const app: express.Express = express()
 const port = 3000
-app.use(bodyParser.json()) // 追加
+app.use(bodyParser.json())
 
 // const initDataSql = fs.readFileSync('./sql/sampleData.sql').toString()
 // const dummyDataSqls = fs
