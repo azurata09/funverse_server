@@ -49,15 +49,19 @@ paths:
                         x:
                           type: string
                           example: azurata09_
-  /user/{id}/close:
+  /user/near:
     post:
       summary: ユーザーがビーコンの近くにいるかどうかを登録する。
-      parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            id:
+              description: 'ユーザーのID'
+              type: integer
+            close:
+              description: '近くにいるか'
+              type: boolean
       responses:
         '200':
           description: 'ユーザーの情報を設定することに成功'
